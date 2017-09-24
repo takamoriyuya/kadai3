@@ -16,6 +16,6 @@
  <tr><th>日本語</th><td><input type="text" name="japanese"></td></tr>
  </table>
  <input type="submit" value="登録">
-  </form>
+ </form>
 </body>
 </html>

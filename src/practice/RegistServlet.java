@@ -15,14 +15,14 @@ import javax.servlet.http.HttpServletResponse;
 public class RegistServlet extends HttpServlet{
 	protected void service(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
-		    req.setCharacterEncoding("UTF-8");
+		req.setCharacterEncoding("UTF-8");
 
 		String english = req.getParameter("english");
 		String japanese = req.getParameter("japanese");
 
 		ArrayList<Word> words = new ArrayList<>();
-        WordDAO dao = new WordDAO();
-        Word word1 = new Word(english,japanese);
+		WordDAO dao = new WordDAO();
+		Word word1 = new Word(english,japanese);
 		words.add(word1);
 		int saveCount = dao.registWords(words);
 
@@ -31,11 +31,11 @@ public class RegistServlet extends HttpServlet{
 		List<Word> wList = new ArrayList<>();
 		wList =dao.getWords();
 
-		 int wordNum = 0;
-		 for(Word tmp : wList){
+		int wordNum = 0;
+		for(Word tmp : wList){
 			System.out.println(tmp);
 			wordNum++;
-		 }
+		}
 
 		req.setAttribute("registCount",saveCount);
 		req.setAttribute("wordsCount",wordNum);

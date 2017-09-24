@@ -60,23 +60,23 @@ public class WordDAO {
 	}
 
 
-		public List<Word> getWords() {
-			List<Word> words = new ArrayList<>();
+	public List<Word> getWords() {
+		List<Word> words = new ArrayList<>();
 
-			try {
-				String SQL = "SELECT * FROM dictionary";
-				Class.forName("com.mysql.jdbc.Driver");
-				con = DriverManager.getConnection("jdbc:mysql://localhost/testdb?useUnicode=true&characterEncoding=utf8", "root", "");
+		try {
+			String SQL = "SELECT * FROM dictionary";
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost/testdb?useUnicode=true&characterEncoding=utf8", "root", "");
 
-				st = con.prepareStatement(SQL);
+			st = con.prepareStatement(SQL);
 
-			    rs =st.executeQuery();
+			rs =st.executeQuery();
 
 
 
-		while(rs.next()){
+			while(rs.next()){
 
-		        Word wd = new Word(rs.getString("english"),rs.getString("japanese"));
+				Word wd = new Word(rs.getString("english"),rs.getString("japanese"));
 				words.add(wd);
 			}
 		} catch (ClassNotFoundException e) {
@@ -100,5 +100,5 @@ public class WordDAO {
 			}
 		}
 		return words;
-		}
+	}
 }

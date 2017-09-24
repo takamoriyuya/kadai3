@@ -13,10 +13,10 @@ public class Word{
 		this.japanese = japanese;
 	}
 
-    @Override
+	@Override
 	public String toString(){
-         return "英単語 : " + english + " 日本語 " + japanese;
-    }
+		return "英単語 : " + english + " 日本語 " + japanese;
+	}
 
 	public String getEnglish() {
 		return english;
